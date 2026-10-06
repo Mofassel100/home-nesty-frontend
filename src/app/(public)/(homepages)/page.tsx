@@ -1,7 +1,11 @@
+import { PropertyCarousel } from "@/components/modules/home-scrooler-card";
+import HomeHero from "@/components/modules/home-top";
+
 export default function HomePage() {
   return (
     <div>
-      <h1> Home page </h1>
+      <HomeHero></HomeHero>
+      <PropertyCarousel></PropertyCarousel>
     </div>
   );
 }
