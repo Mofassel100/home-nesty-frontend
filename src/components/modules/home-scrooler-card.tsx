@@ -13,6 +13,9 @@ import {
 } from "@/components/ui/carousel";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { useGetProperty } from "@/hooks/property.hook";
+import Image from "next/image";
+import { CardProperty } from "./card-home-property";
 
 const properties = [
   {
@@ -54,6 +57,22 @@ const properties = [
 ];
 
 export function PropertyCarousel() {
+// id: '8e5720ae-12eb-43bb-a988-1957c7076129',
+//         ownerId: 'ed16a81b-a72d-4797-addf-4b8de0146a56',
+//         title: 'Beautiful 3 Bedroom Apartment',
+//         description: 
+//           'A spacious and modern apartment available for rent in a convenient location.',
+//         propertyType: 'SUBLET',
+//         address: 'House 25, Road 5, Mirpur 10',
+//         city: 'Dhaka',
+//         area: 'Mirpur',
+//         rent: '25000',
+//         securityDeposit: '50000',
+//         bedrooms: 3,
+//         bathrooms: 2,
+  const {data,isLoading}= useGetProperty()
+  const propertyData = data?.data || []
+  console.log(data)
   const [api, setApi] = React.useState<CarouselApi>();
   const [isHovered, setIsHovered] = React.useState(false);
 
@@ -106,7 +125,7 @@ export function PropertyCarousel() {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {properties.map((property) => (
+              {propertyData.map((property:any) => (
                 <CarouselItem
                   key={property.id}
                   className="
@@ -115,33 +134,11 @@ export function PropertyCarousel() {
                     basis-full
                     sm:basis-1/2
                     md:basis-1/3
-                    lg:basis-1/4
-                    xl:basis-1/5
+                    lg:basis-1/3
+                    xl:basis-1/4
                   "
                 >
-                  <Card className="h-full overflow-hidden rounded-2xl">
-                    <CardContent className="p-5">
-
-                      {/* Property Image Placeholder */}
-                      <div className="mb-4 aspect-[4/3] rounded-xl bg-muted" />
-
-                      <h3 className="line-clamp-1 text-lg font-semibold">
-                        {property.title}
-                      </h3>
-
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {property.location}
-                      </p>
-
-                      <p className="mt-3 font-semibold text-primary">
-                        {property.price}
-                        <span className="ml-1 text-sm font-normal text-muted-foreground">
-                          /month
-                        </span>
-                      </p>
-
-                    </CardContent>
-                  </Card>
+                 <CardProperty property={property}/>
                 </CarouselItem>
               ))}
             </CarouselContent>

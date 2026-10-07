@@ -8,6 +8,7 @@
 //   verifyDoctorAccount,
 // } from "@/api";
 // import { DoctorParams, PublicDoctorParams } from "@/types";
+import { getProperty } from "@/api";
 import {
   useMutation,
   useQuery,
@@ -21,11 +22,11 @@ import {
 //   });
 // }
 
-export function useVerifyDoctorAccount() {
-  return useMutation({
+// export function useVerifyDoctorAccount() {
+//   return useMutation({
    
-  });
-}
+//   });
+// }
 
 // export function useGetAllDoctors(params: DoctorParams) {
 //   return useQuery({
@@ -74,13 +75,19 @@ export function useVerifyDoctorAccount() {
 //   });
 // }
 
-// export function useGetTodayScheduleByDoctor(params: {
-//   doctorId?: string;
+// export function useGetProperty(params: {
+//   providerId?: string;
 //   page?: number;
 //   limit?: number;
 // }) {
 //   return useQuery({
-//     queryKey: ["schedule", params],
-//     queryFn: () => getTodayScheduleByDoctor(params),
+//     queryKey: ["property", params],
+//     queryFn: () => getProperty(),
 //   });
 // }
+export function useGetProperty() {
+  return useQuery({
+    queryKey: ["property"],
+    queryFn: () => getProperty(),
+  });
+}

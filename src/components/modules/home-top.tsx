@@ -10,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { useGetHomeBanner } from "@/hooks/home.banner"
 
 const slides = [
   {
@@ -59,6 +60,10 @@ const slides = [
 ]
 
 export default function HomeHero() {
+
+  const { data, isLoading }  = useGetHomeBanner()
+  const homeData = data?.data || []
+  console.log(data?.data)
      const plugin = React.useRef(
     Autoplay({
       delay: 2000, // 3 seconds
@@ -75,7 +80,7 @@ export default function HomeHero() {
         className="w-full"
       >
         <CarouselContent className="ml-0">
-          {slides.map((slide) => (
+          {homeData?.map((slide:any) => (
             <CarouselItem key={slide.id} className="pl-0">
               <div className="relative h-[500px] w-full overflow-hidden sm:h-[550px] md:h-[600px] lg:h-[650px] xl:h-[700px]">
                 {/* Background Image */}
