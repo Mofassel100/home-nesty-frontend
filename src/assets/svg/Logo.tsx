@@ -1,47 +1,76 @@
+
 export default function Logo() {
   return (
     <svg
-      xmlns="https://logoipsum.com/artwork/247"
+      xmlns="http://www.w3.org/2000/svg"
       width="40"
       height="40"
       viewBox="0 0 40 40"
       fill="none"
-      id="Logo"
+      aria-label="Home Nesty logo"
+      role="img"
     >
-      <g id="logomark">
-        <path
-          d="M24 0H16V12.0632C15.9663 14.2434 14.1885 16 12.0005 16H0V24H8.68629C10.808 24 12.8429 23.1571 14.3431 21.6569L21.6569 14.3431C23.1571 12.8429 24 10.808 24 8.68629V0Z"
-          fill="url(#paint0_linear_12062_9373)"
-        />
-        <path
-          d="M16 40H24V27.9368C24.0337 25.7566 25.8115 24 27.9995 24H40V16H31.3137C29.192 16 27.1571 16.8429 25.6569 18.3431L18.3431 25.6569C16.8429 27.1571 16 29.192 16 31.3137V40Z"
-          fill="url(#paint1_linear_12062_9373)"
-        />
-      </g>
       <defs>
         <linearGradient
-          id="paint0_linear_12062_9373"
-          x1="20"
-          y1="-0.997096"
-          x2="20"
-          y2="33.7931"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#75D8FC" />
-          <stop offset="1" stopColor="#0072E5" />
-        </linearGradient>
-        <linearGradient
-          id="paint1_linear_12062_9373"
-          x1="20"
-          y1="-0.997096"
-          x2="20"
-          y2="33.7931"
+          id="home-nesty-gradient"
+          x1="8"
+          y1="5"
+          x2="33"
+          y2="36"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#75D8FC" />
           <stop offset="1" stopColor="#0072E5" />
         </linearGradient>
       </defs>
+
+      {/* House */}
+      <path
+        d="M5 18.5L20 6L35 18.5V33C35 34.1 34.1 35 33 35H7C5.9 35 5 34.1 5 33V18.5Z"
+        fill="url(#home-nesty-gradient)"
+      />
+
+      {/* Roof */}
+      <path
+        d="M3 19L20 4L37 19"
+        stroke="white"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+
+      {/* Door */}
+      <path
+        d="M16 35V24C16 22.9 16.9 22 18 22H22C23.1 22 24 22.9 24 24V35"
+        fill="white"
+      />
+
+      {/* Door handle */}
+      <circle
+        cx="21.5"
+        cy="28.5"
+        r="1"
+        fill="#0072E5"
+      />
+
+      {/* Windows */}
+      <rect
+        x="9"
+        y="21"
+        width="5"
+        height="5"
+        rx="1"
+        fill="white"
+      />
+
+      <rect
+        x="26"
+        y="21"
+        width="5"
+        height="5"
+        rx="1"
+        fill="white"
+      />
     </svg>
   );
 }

@@ -1,42 +1,35 @@
 import {
   getHomeBanner,
   googleOAuth,
+  userHomeTopeCreate,
+  userHomeTopeUpdated,
   userLogin,
   userLogout,
   userRegistration,
   verifyAccount,
 } from "@/api";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-// export function useLogin() {
-//   return useMutation({
-//     mutationFn: userLogin,
-//   });
-// }
 
-// export function useVerifyAccount() {
-//   return useMutation({
-//     mutationFn: verifyAccount,
-//   });
-// }
+export function useHomeTope() {
+   
+  return useMutation({
+    mutationFn: userHomeTopeCreate,
+  });
+}
+export function useHomeTopeEdit() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: userHomeTopeUpdated,
+       onSuccess: () => {
+        queryClient.invalidateQueries({
+        queryKey: ["homeBanner"],
+      });
+    },
+  });
+}
 
-// export function useRegistration() {
-//   return useMutation({
-//     mutationFn: userRegistration,
-//   });
-// }
 
-// export function useLogout() {
-//   return useMutation({
-//     mutationFn: userLogout,
-//   });
-// }
-
-// export function useGoogleOAuth() {
-//   return useMutation({
-//     mutationFn: googleOAuth,
-//   });
-// }
 
 export function useGetHomeBanner() {
   return useQuery({

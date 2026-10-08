@@ -5,12 +5,12 @@ export const adminRoutes = [
     title: "Management",
     items: [
       {
-        title: "Overview",
-        url: `${prefix}`,
+        title: "Home Tope",
+        url: `${prefix}/homeTope`,
       },
       {
-        title: "Doctor Approval",
-        url: `${prefix}/approve-doctor`,
+        title: "Home Tope Details",
+        url: `${prefix}/homeTopeDetails`,
       },
     ],
   },
