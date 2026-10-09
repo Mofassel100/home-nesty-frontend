@@ -1,8 +1,9 @@
+import QuestionDatelsTable from "@/components/modules/question/question-details"
 
 
 const QuestionPage = () => {
   return (
-    <div>QuestionPage</div>
+    <div><QuestionDatelsTable></QuestionDatelsTable></div>
   )
 }
 
