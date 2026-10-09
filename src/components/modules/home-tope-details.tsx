@@ -17,6 +17,7 @@ export default function HomeDatelsTable() {
   const homeBanner = data?.data || [];
 
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [expandedDescriptionId, setDesExpandedId] = useState<string | null>(null);
 
   const limitWords = (text: string = "", limit: number) => {
     if (!text) {
@@ -205,12 +206,12 @@ export default function HomeDatelsTable() {
                           inline
                           text-xs
                           font-semibold
-                          text-blue-600
+                         
                           hover:underline
                           sm:text-sm
                         "
                       >
-                        {isExpanded ? "See less" : "See more"}
+                        {isExpanded ?<span className=" text-red-600 font-bold">See less</span>  : <span className=" text-blue-600 font-bold">See More</span>}
                       </button>
                     )}
                   </h3>
@@ -244,7 +245,7 @@ export default function HomeDatelsTable() {
                           sm:text-sm
                         "
                       >
-                        {isExpanded ? "See less" : "See more"}
+                        {isExpanded ?<span className=" text-red-600 font-bold">See less</span>  : <span className=" text-blue-600 font-bold">See More</span>}
                       </button>
                     )}
                   </p>

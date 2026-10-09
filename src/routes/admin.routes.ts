@@ -12,6 +12,26 @@ export const adminRoutes = [
         title: "Home Tope Details",
         url: `${prefix}/homeTopeDetails`,
       },
+      {
+        title: "User Details",
+        url: `${prefix}/user`,
+      },
+      {
+        title: "Payment Details",
+        url: `${prefix}/payment`,
+      },
+      {
+        title: "Property Details",
+        url: `${prefix}/property`,
+      },
+      {
+        title: "Booking Details",
+        url: `${prefix}/booking`,
+      },
+      {
+        title: "Home Questions Details",
+        url: `${prefix}/question`,
+      },
     ],
   },
   {

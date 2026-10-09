@@ -19,3 +19,29 @@ export interface User {
   createdAt: string;
   updatedAt: string;
 }
+export interface IUpUser {
+  name?: string;
+  email?: string;
+  emailVerified?: boolean;
+  role?: UserRole;
+  status?: UserStatus;
+  needPasswordChange?: boolean;
+  imageUrl?: null | string;
+  imagePublicId?: null | string;
+  isDeleted?: boolean;
+}
+
+
+export interface IUserPayload {
+  homeBanner: File;
+  data: IUpUser;
+}
+
+export interface IUserUpdatedPayload {
+  image: File | null;
+  data: IUpUser;
+}
+export interface IUserEditPayload {
+  id: string;
+  payload: IUserUpdatedPayload;
+}

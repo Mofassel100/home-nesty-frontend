@@ -7,6 +7,7 @@ import {
 import { DashboardSidebar } from "./dashboard-sidebar";
 import { ReactNode } from "react";
 import { UserRole } from "@/types";
+import { Menu } from "lucide-react";
 
 export default function DashboardShell({
   children,
@@ -19,8 +20,8 @@ export default function DashboardShell({
     <SidebarProvider>
       <DashboardSidebar role={role} />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-          <SidebarTrigger className="-ml-1" />
+        <header className="flex text-4xl h-16 shrink-0 items-center gap-2 border-b px-4">
+      <SidebarTrigger size="lg" className="text-lg [&_svg]:size-12" />
         </header>
         {children}
       </SidebarInset>
