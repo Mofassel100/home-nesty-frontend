@@ -5,8 +5,8 @@ export const customerRoutes = [
     title: "Bookings",
     items: [
       {
-        title: "Overview",
-        url: `${prefix}`,
+        title: "Booking Details",
+        url: `${prefix}/booking`,
       },
       {
         title: "Payment History",

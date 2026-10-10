@@ -189,7 +189,7 @@ const propertyData: IProperty = {
           type: "success",
         });
 
-        router.push("/provider-dashboard");
+        router.push("/provider/property/property-details");
       },
 
       onError: (error: Error) => {

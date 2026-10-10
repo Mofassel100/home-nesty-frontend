@@ -195,6 +195,7 @@ export interface IProperty {
   contactEmail?: string | null;
 
   status: PropertyStatus;
+  createdAt?:Date
 }
 export interface IPropertyUpdated {
 	id?:string
