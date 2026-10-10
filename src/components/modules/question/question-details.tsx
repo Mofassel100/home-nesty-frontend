@@ -1,5 +1,6 @@
 "use client";
 
+import { DialogQuestionEdit } from "@/components/form/question/question-edit";
 import {
 Table,
 TableBody,
@@ -68,7 +69,7 @@ Total questions: {questions.length} </p> </div>
               {question.description || "No description available"}
             </TableCell>
             <TableCell className="whitespace-normal break-words align-top text-xs text-muted-foreground sm:text-sm">
-              Edit
+             <div><DialogQuestionEdit itemData={question}key={question.id}></DialogQuestionEdit></div>
             </TableCell>
           </TableRow>
         ))}

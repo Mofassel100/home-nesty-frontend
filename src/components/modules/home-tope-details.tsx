@@ -10,6 +10,7 @@ import { useGetHomeBanner } from "@/hooks/home.banner";
 import Image from "next/image";
 import { useState } from "react";
 import { DialogDemo } from "../form/home-top-edit";
+import { Edit } from "lucide-react";
 
 export default function HomeDatelsTable() {
   const { data, isLoading } = useGetHomeBanner();
@@ -17,7 +18,6 @@ export default function HomeDatelsTable() {
   const homeBanner = data?.data || [];
 
   const [expandedId, setExpandedId] = useState<string | null>(null);
-  const [expandedDescriptionId, setDesExpandedId] = useState<string | null>(null);
 
   const limitWords = (text: string = "", limit: number) => {
     if (!text) {
@@ -257,12 +257,13 @@ export default function HomeDatelsTable() {
                     mt-4
                     flex
                     items-center
-                    justify-end
+                    justify-center
                     border-t
                     pt-3
                   "
                 >
-                  <DialogDemo homeData={homeData} key={homeData.id}/>
+                  
+                  <DialogDemo   homeData={homeData} key={homeData.id}></DialogDemo>
                 </div>
               </div>
             </div>

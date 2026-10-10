@@ -1,25 +1,39 @@
 import apiClient from "@/lib/apiClient";
 import {
+  IProperty,
+  IPropertyPayload,
   LoginPayload,
+  PropertyEditPayload,
   RegistrationPayload,
   VerifyAccountPayload,
 } from "@/types";
 
-// export function userLogin(payload: LoginPayload) {
-//   return apiClient("/auth/login", { method: "POST", body: payload });
-// }
+export function PropertyUpdated(
+  {
+  id,
+  payload,
+}: PropertyEditPayload
+) {
+  const formData = new FormData();
 
-// export function verifyAccount(payload: VerifyAccountPayload) {
-//   return apiClient("/auth/verify-email", { method: "POST", body: payload });
-// }
+  formData.append("data", JSON.stringify(payload.data));
 
-// export function userRegistration(payload: RegistrationPayload) {
-//   return apiClient("/auth/register", { method: "POST", body: payload });
-// }
+  if (payload.propertyImage) {
+    formData.append("propertyUpdate", payload.propertyImage);
+  }
 
-// export function userLogout() {
-//   return apiClient("/auth/logout", { method: "POST" });
-// }
+  return apiClient(`/property/${id}`, {
+    method: "PATCH",
+    body: formData,
+  });
+}
+export function PropertyCreate(payload: IPropertyPayload) {
+  console.log(payload)
+  const formData = new FormData();
+  formData.append("data", JSON.stringify(payload.data));
+  formData.append("property", payload.propertyImage as File);
+  return apiClient("/property/create", { method: "POST", body:formData });
+}
 
 export function getProperty() {
   return apiClient("/property");

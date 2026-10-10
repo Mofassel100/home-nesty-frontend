@@ -1,5 +1,5 @@
 
-import { getQuestion } from "@/api";
+import { getQuestion, QuestionUpdated } from "@/api";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 
@@ -9,17 +9,15 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 //     mutationFn: userHomeTopeCreate,
 //   });
 // }
-// export function useQuestionEdit() {
-//   const queryClient = useQueryClient();
-//   return useMutation({
-//     mutationFn: userHomeTopeUpdated,
-//        onSuccess: () => {
-//         queryClient.invalidateQueries({
-//         queryKey: ["homeBanner"],
-//       });
-//     },
-//   });
-// }
+export function useQuestionEdit() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: QuestionUpdated,
+       onSuccess: () => {
+      
+    },
+  });
+}
 
 
 

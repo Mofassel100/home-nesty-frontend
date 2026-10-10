@@ -2,15 +2,15 @@ const prefix = "/provider";
 
 export const providerRoutes = [
   {
-    title: "Schedule",
+    title: "Provider Management",
     items: [
       {
-        title: "Overview",
-        url: `${prefix}`,
+        title: "Property Create",
+        url: `${prefix}/property`,
       },
       {
-        title: "Create Schedule",
-        url: `${prefix}`,
+        title: "Property Details",
+        url: `${prefix}/property/property-details`,
       },
     ],
   },
